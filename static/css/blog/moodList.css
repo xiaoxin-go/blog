@@ -1,0 +1,83 @@
+.bloglist {
+    width: 100%;
+    margin: 0 15px;
+    background: url(../../img/r_title_bg.jpg) repeat-y 78.4% 0;
+    overflow: hidden;
+}
+
+.arrow_box {
+    background: #f8f8f8;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .1), inset 0 1px 1px rgba(214, 214, 214, 0.7);
+    width: 75%;
+    border-radius: 6px;
+    position: relative;
+    padding: 10px 0;
+    margin: 20px 0;
+}
+
+.arrow_box::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 22px;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    left: 100%;
+    top: 23px;
+}
+
+.arrow_box::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 104%;
+    top: 18px;
+    background: #ccccce;
+    border: 2px solid #fff;
+    transition: all 0.5s;
+}
+
+.arrow_box:hover {
+    background: floralwhite;
+    color: #333;
+    text-shadow: 1px 1px 1px antiquewhite;
+}
+
+.arrow_box:hover::before {
+    border-color: transparent transparent transparent floralwhite
+}
+
+/* 三角形 */
+.sy {
+    overflow: hidden;
+}
+.sy p{
+    padding-left:20px;
+    padding-right:20px;
+    height: 40px;
+}
+
+.arrow_box img {
+    width: 200px;
+    height: 120px;
+    float: left;
+    margin: 0 20px 0 20px;
+}
+
+.dateview {
+    position: absolute;
+    left: 107%;
+    top: 20px;
+    width: 125px;
+    line-height: 30px;
+    background: #999;
+    border-radius: 0 40px;
+    text-align: center;
+    color: #fff;
+}
+.prv{
+    margin-right:10px;
+}

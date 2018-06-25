@@ -1,0 +1,49 @@
+{% extends 'blog/article.html' %}
+{% load staticfiles %}
+{% block head %}
+    <link href="{% static 'css/blog/article-detail.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block title %}
+    <li><a href="/content">文章</a></li>
+    <li class="active">{{ title }}</li>
+{% endblock %}
+{% block contentText %}
+    <h2 class="c_title">{{ title }}</h2>
+    <p class="box_c">
+        <span class="d_time">发布时间：{{ content.addTime }}</span>
+        <span>编辑：{{ content.user }}</span>
+        <span>阅读（{{ content.read }}）</span>
+    </p>
+    <ul class="infos">
+        {% for conn in context %}
+            <p>{{ conn }}</p>
+        {% endfor %}
+    </ul>
+    <div class="keybq">
+        <p>
+            <span>关键字：</span>
+            {% for lab in label %}
+                <a class="label label-default">{{ lab }}</a>
+            {% endfor %}
+        </p>
+    </div>
+    <div class="nextinfo">
+        <p class="last">
+            上一篇：
+            {% if prev == '' %}
+                <a href="">没有了</a>
+            {% else %}
+                <a href="/content/getText/{{ prev.id }}">{{ prev.title }}</a>
+            {% endif %}
+
+        </p>
+        <p class="next">
+            下一篇：
+            {% if next == '' %}
+                <a href="">没有了</a>
+            {% else %}
+                <a href="/content/getText/{{ next.id }}">{{ next.title }}</a>
+            {% endif %}
+        </p>
+    </div>
+{% endblock %}

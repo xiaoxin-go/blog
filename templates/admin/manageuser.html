@@ -1,0 +1,79 @@
+{% extends 'admin/base.html' %}
+{% block body-left %}
+    <aside class="col-sm-3 col-md-2 col-lg-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li>
+                        <a href="/admin/index/" draggable="false">报告</a>
+                    </li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li>
+                        <a href="/admin/article/" draggable="false">文章</a>
+                    </li>
+                    <li>
+                        <a href="/admin/notice/" draggable="false">公告</a>
+                    </li>
+                    <li>
+                        <a href="/admin/comment/" draggable="false">评论</a>
+                    </li>
+                    <li>
+                        <a href="/admin/commit/" draggable="false">留言</a>
+                    </li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li>
+                        <a href="/admin/category/" draggable="false">栏目</a>
+                    </li>
+                    <li>
+                        <a href="dropdown-toggle" id="otherMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" draggable="false">其他</a>
+                        <ul class="dropdown-menu" aria-labelledby="otherMenu">
+                            <li>
+                                <a href="/admin/flink/" draggable="false">友情链接</a>
+                            </li>
+                            <li>
+                                <a data-toggle="modal" data-target="#areDeveloping" draggable="false">访问记录</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li class="active">
+                        <a class="dropdown-toggle" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" draggable="false">用户</a>
+                        <ul class="dropdown-menu" aria-labelledby="userMenu">
+                            <li>
+                                <a data-toggle="modal" data-target="#areDeveloping" draggable="false">管理用户组</a>
+                            </li>
+                            <li>
+                                <a href="/admin/manageUser/">管理用户</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="/admin/loginlog/" draggable="false">管理记录日志</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-toggle" id="settingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" draggable="false">设置</a>
+                        <ul class="dropdown-menu" aria-labelledby="settingMenu">
+                            <li>
+                                <a href="/admin/setting/" draggable="false">基本设置</a>
+                            </li>
+                            <li>
+                                <a href="/admin/readset/" draggable="false">阅读设置</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a data-toggle="modal" data-target="#areDeveloping" draggable="false">安全设置</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li class="disabled">
+                                <a draggable="false">扩展菜单</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+{% endblock %}
+{% block body-right %}
+    <p>管理用户</p>
+{% endblock %}

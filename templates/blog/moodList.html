@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block head %}
+    <link href="{% static 'css/blog/page.css' %}" rel="stylesheet">
+    <link href="{% static 'css/blog/moodList.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block navbar %}
+    <li><a href="/">首页</a></li>
+    <li><a href="#">关于</a></li>
+    <li><a  href="/content">成长</a></li>
+    <li><a href="#">学习</a></li>
+    <li><a href="#">娱乐</a></li>
+    <li><a class="active" href="#">说说</a></li>
+    <li><a href="/commit">留言</a></li>
+{% endblock navbar %}
+{% block body %}
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                {% include 'blog/breadcrumb.html' %}
+                <div class="bloglist">
+                {% for content in contentList %}
+                    <ul class="arrow_box">
+                        <div class="sy">
+                            {% if content.img %}
+                                <img src="{% static 'img/bb.jpg' %}">
+                            {% endif %}
+                            <p>{{ content.text }}</p>
+                        </div>
+                    <!--<p class="bloglist_count"><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:22</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:0</span></p>-->
+                        <span class="dateview">{{ content.addTime | date:"Y-m-d" }}</span>
+                    </ul>
+                {% endfor %}
+                </div>
+                {% include 'blog/page.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+{% block footer %}
+    <script src="{% static 'js/blog/moodList.js' %}"></script>
+{% endblock footer %}

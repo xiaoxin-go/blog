@@ -1,0 +1,74 @@
+.w_breadcrumb {
+    margin: 0 15px 20px 15px;
+    height: 40px;
+    border-bottom: #337ab7 1px solid;
+}
+.w_navbar_tip {
+    float: right;
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 40px;
+    height: 40px;
+}
+.box_c{
+    border:1px dashed #ccc;
+    text-align:center;
+    padding:5px 0;
+    margin-right:30px;
+    color:#999;
+}
+.box_c span{
+    margin:0 10px;
+}
+.box_c span a{
+    color:#099;
+}
+ul.infos{
+    overflow:hidden;
+    margin:20px 30px 20px 0;
+    line-height:28px;
+    font-size:14px;
+    text-indent:2em;
+    color:#666;
+}
+.keybq{
+    background:url(../../img/tab.png) no-repeat 10px center #F8F8F8;
+    line-height:30px;
+    height:30px;
+    padding-left:40px;
+    border:1px solid #F0F0F0;
+}
+.keybq span{
+    color:#099;
+}
+.keybq .label{
+    margin-right:10px;
+}
+.nextinfo{
+    margin:25px 0;
+    line-height:20px;
+}
+.nextinfo .last{
+    width:50%;
+    float:left;
+}
+.nextinfo .next{
+    width:50%;
+    float:right;
+    text-align:right;
+}
+.nextinfo a:hover{
+    color:#337AB7;
+}
+.c_title {
+    font-size: 22px;
+    margin: 20px 0;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+.w_main_left {
+    font: 12px "宋体", Arial, Helvetica, sans-serif;
+    color: #756F71;
+}

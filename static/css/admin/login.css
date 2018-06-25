@@ -1,0 +1,10 @@
+form{
+    width:320px;
+    margin:12% auto;
+    padding: 10px 30px 30px 30px;
+    background: ivory;
+    border-radius:5px;
+}
+.msg{
+    color:red;
+}

@@ -1,0 +1,198 @@
+{% extends 'admin/base.html' %}
+{% block body-left %}
+    <aside class="col-sm-3 col-md-2 col-lg-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li>
+                <a href="/admin/index/" draggable="false">报告</a>
+            </li>
+        </ul>
+        <ul class="nav nav-sidebar">
+            <li class="active">
+                <a href="/admin/article/" draggable="false">文章</a>
+            </li>
+            <li>
+                <a href="/admin/notice/" draggable="false">公告</a>
+            </li>
+            <li>
+                <a href="/admin/comment/" draggable="false">评论</a>
+            </li>
+            <li>
+                <a href="/admin/commit/" draggable="false">留言</a>
+            </li>
+        </ul>
+        <ul class="nav nav-sidebar">
+            <li>
+                <a href="/admin/category/" draggable="false">栏目</a>
+            </li>
+            <li>
+                <a href="dropdown-toggle" id="otherMenu" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false" draggable="false">其他</a>
+                <ul class="dropdown-menu" aria-labelledby="otherMenu">
+                    <li>
+                        <a href="/admin/flink/" draggable="false">友情链接</a>
+                    </li>
+                    <li>
+                        <a data-toggle="modal" data-target="#areDeveloping" draggable="false">访问记录</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav nav-sidebar">
+            <li>
+                <a class="dropdown-toggle" id="userMenu" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false" draggable="false">用户</a>
+                <ul class="dropdown-menu" aria-labelledby="userMenu">
+                    <li>
+                        <a data-toggle="modal" data-target="#areDeveloping" draggable="false">管理用户组</a>
+                    </li>
+                    <li>
+                        <a href="/admin/manageUser/">管理用户</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a href="/admin/loginlog/" draggable="false">管理记录日志</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="dropdown-toggle" id="settingMenu" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false" draggable="false">设置</a>
+                <ul class="dropdown-menu" aria-labelledby="settingMenu">
+                    <li>
+                        <a href="/admin/setting/" draggable="false">基本设置</a>
+                    </li>
+                    <li>
+                        <a href="/admin/readset/" draggable="false">阅读设置</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a data-toggle="modal" data-target="#areDeveloping" draggable="false">安全设置</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li class="disabled">
+                        <a draggable="false">扩展菜单</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+{% endblock %}
+{% block body-right %}
+    <div>
+        <h1 class="page-header">操作</h1>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/admin/add-article/">增加文章</a>
+            </li>
+        </ol>
+        <h1 class="page-header">
+            管理
+            <span class="badge">{{ count }}</span>
+        </h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>
+                        <span class="glyphicon glyphicon-th-large"></span>
+                        <span class="visible-lg">选择</span>
+                    </th>
+                    <th>
+                           <span class="glyphicon glyphicon-file">
+                           </span>
+                        <span class="visible-lg">标题</span>
+                    </th>
+                    <th>
+                        <span class="glyphicon glyphicon-list"></span>
+                        <span>栏目</span>
+                    </th>
+                    <th class="hidden-sm">
+                        <span class="glyphicon glyphicon-tag"></span>
+                        <span class="visible-lg">标签</span>
+                    </th>
+                    <th class="hidden-sm">
+                        <span class="glyphicon glyphicon-comment"></span>
+                        <span>评论</span>
+                    </th>
+                    <th>
+                        <span class="glyphicon glyphicon-time"></span>
+                        <span class="visible-lg">日期</span>
+                    </th>
+                    <th>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        <span class="visible-lg">操作</span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for content in contents %}
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="input-control" name="checkbox[]" value>
+                        </td>
+                        <td class="article-title">{{ content.title }}</td>
+                        <td>文章栏目</td>
+                        <td class="hidden-sm">{{ content.label }}</td>
+                        <td class="hidden-sm">0</td>
+                        <td>{{ content.addtime }}</td>
+                        <td>
+                            <a href="/update/{{ content.id }}" draggable="false">修改</a>
+                            <a href="/delete/{{ content.id }}" draggable="false">删除</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <footer class="message_footer">
+            <nav>
+                <div class="btn-toolbar operation" role="toolbar">
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-default" onclick="select()" draggable="false">全选</a>
+                        <a class="btn btn-default" onclick="reverse()" draggable="false">反选</a>
+                        <a class="btn btn-default" onclick="noselect()" draggable="false">不选</a>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="bottom"
+                                title name="checkbox_delete" data-original-title="删除全部选中">
+                            删除
+                        </button>
+                    </div>
+                </div>
+                <ul class="pagination pagenav">
+                    {% ifequal index 1 %}
+                        <li class="disabled">
+                            {% else %}
+                        <li>
+                    {% endifequal %}
+
+                    <a aria-label="Previous" draggable="false" href="/admin/article/{{ prev }}">
+                        <span aria-hidden="true">&lt;&lt;</span>
+                    </a>
+                    </li>
+
+                    {% for i in indexlist %}
+                        {% ifequal i index %}
+                            <li class="active">
+                                <a href="/admin/article/{{ i }}" draggable="false">{{ i }}</a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="/admin/article/{{ i }}" draggable="false">{{ i }}</a>
+                            </li>
+                        {% endifequal %}
+                    {% endfor %}
+                    {% ifequal index last %}
+                        <li class="disabled">
+                            {% else %}
+                        <li>
+                    {% endifequal %}
+                    <a href="/admin/article/{{ next }}" aria-label="Next" draggable="false">
+                        <span aria-hidden="true">&gt;&gt;</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+{% endblock %}

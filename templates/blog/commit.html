@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block head %}
+    <link href="{% static 'css/blog/commit.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block navbar %}
+    <li><a href="/">首页</a></li>
+    <li><a href="#">关于</a></li>
+    <li><a href="/content">成长</a></li>
+    <li><a href="#">学习</a></li>
+    <li><a href="#">娱乐</a></li>
+    <li><a href="/moodList">说说</a></li>
+    <li><a class="active" href="/commit">留言</a></li>
+{% endblock navbar %}
+{% block body %}
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                {% include 'blog/breadcrumb.html' %}
+                <div class="commitlist">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

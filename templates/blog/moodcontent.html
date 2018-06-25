@@ -1,0 +1,13 @@
+{% load staticfiles %}
+{% for content in contentList %}
+    <ul class="arrow_box">
+        <div class="sy">
+            {% if content.img %}
+                <img src="{% static 'img/bb.jpg' %}">
+            {% endif %}
+            <p>{{ content.text }}</p>
+        </div>
+        <!--<p class="bloglist_count"><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:22</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:0</span></p>-->
+        <span class="dateview">{{ content.addTime | date:"Y-m-d" }}</span>
+    </ul>
+{% endfor %}

@@ -1,0 +1,26 @@
+.count_r{
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+}
+
+.w_thumbnail img {
+    width: 160px;
+    height: 160px;
+}
+.w_thumbnail{
+	margin-bottom: 0px;
+    margin-left:-15px;
+}
+.row{
+    position:relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.row .overView{
+    margin-bottom:50px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}

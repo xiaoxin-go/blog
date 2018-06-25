@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../static/js/jquery.min.js" type="text/javascript"></script>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        ul > li {
+            display: inline-block;
+        }
+
+        .textarea {
+            width: 98%;
+            min-height: 20px;
+            max-height: 300px;
+            _height: 120px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            outline: 0;
+        {#border: 1px solid #a0b3d6;#} font-size: 12px;
+            line-height: 24px;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            overflow-y: auto;
+        {#border-color: rgba(82, 168, 236, 0.8);#}
+        }
+
+        td, th {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        thead tr {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+
+        thead tr:nth-child(odd) {
+            background-color: cornflowerblue;
+            color: greenyellow;
+        }
+
+        .epg, .src {
+            background-color: rgb(235, 235, 228)
+        }
+
+        input {
+            padding: 3px;
+            outline: none;
+            border: none;
+            display: inline-block;
+            height: 25px;
+            margin: 0;
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+<div class="tb">
+    <table>
+        <thead>
+        <tr>
+            <td colspan="5">情景1</td>
+        </tr>
+        <tr>
+            <td width="150px">源IP</td>
+            <td width="150px">目标IP</td>
+            <td width="100px">协议</td>
+            <td width="80px">端口</td>
+            <td width="150px">备注</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+        <tr>
+            <td colspan="7">情景2</td>
+        </tr>
+        <tr>
+            <td width="150px">访问源</td>
+            <td width="150px">EPG</td>
+            <td width="150px">源IP段</td>
+            <td width="150px">访问目标IP</td>
+            <td width="100px">访问目标端口</td>
+            <td width="80px">协议</td>
+            <td width="150px">备注</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <input type="text">
+            </td>
+            <td class="epg">
+            </td>
+            <td class="src">
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text">
+            </td>
+            <td class="epg">
+            </td>
+            <td class="src">
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text">
+            </td>
+            <td class="epg">
+            </td>
+            <td class="src">
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text">
+            </td>
+            <td class="epg">
+            </td>
+            <td class="src">
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text">
+            </td>
+            <td class="epg">
+            </td>
+            <td class="src">
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+            <td>
+                <div class="textarea" contenteditable="true"></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    $(function () {
+
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/blog/common.css' %}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!--
+        lang=zh-CN：翻译为什么语言，读屏软件读取时使用
+        width=device-width：屏幕大小为设备屏幕大小
+        initial-scale=1：初始化缩放比例
+        user-scalable=no：不允许用户缩放
+        http-equiv='X-UA-Compatible' content='IE=edge'：使用IE最新版本
+        html5shiv.js：用于让老IE支持H5新标签
+        respond.js：用于让老IE浏览器支持CSS3MediaQuery技术，从而实现响应式网页
+    -->
+    <title>{{ title }}</title>
+    {% block head %}
+    {% endblock head %}
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top w_header">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/" class="navbar-brand w_logo"></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav_menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="nav_menu" class="navbar-menu navbar-collapse collapse in">
+            <ul class="nav navbar-nav">
+                {% block navbar %}
+                <li><a class="active" href="/">首页</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="/content">成长</a></li>
+                <li><a href="#">学习</a></li>
+                <li><a href="#">娱乐</a></li>
+                <li><a href="/moodList">说说</a></li>
+                <li><a href="/commit">留言</a></li>
+                {% endblock navbar %}
+            </ul>
+            <form action="#" class="navbar-form navbar-right">
+                <div class="form-group">
+                    <label for="search" class="sr-only">搜索</label>
+                    <input id="search" type="text" class="form-control" placeholder="search">
+                    <button type="button" class="btn btn-default"
+                            style="margin-left:-7px;border-top-left-radius: 0;border-bottom-left-radius: 0">搜索
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% block body %}
+{% endblock body %}
+
+<div class="w_foot">
+    <div class="w_foot_copyright">
+        "Copyright © 2017-2020, www.wfyvv.com. All Rights Reserved. "
+        <span>|</span>
+        <a target="_blank" href="#" rel="nofollow">皖ICP备17002922号</a>
+    </div>
+</div>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/blog/common.js' %}"></script>
+{% block footer %}
+{% endblock footer %}
+
+</body>
+</html>

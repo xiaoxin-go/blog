@@ -1,0 +1,15 @@
+<div id="page">
+    <div class="next fr">&raquo;</div>
+    <div class="last fr">末页</div>
+    <ul class="pagingUl">
+        {% for count in page %}
+            {% if count == 1 %}
+                <li><a href="{{ count }}" class="activP">{{ count }}</a></li>
+            {% else %}
+                <li><a href="{{ count }}">{{ count }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <div class="first fr">首页</div>
+    <div class="prv fr">&laquo;</div>
+</div>

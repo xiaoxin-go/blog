@@ -1,0 +1,141 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block body %}
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="panel panel-default">
+                        <div id="car" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for img in Image %}
+                                    {% if forloop.counter == 1 %}
+                                        <div class="item active">
+                                            <img src="/static/img/{{ img.name }}" alt="">
+                                        </div>
+                                    {% else %}
+                                        <div class="item">
+                                            <img src="/static/img/{{ img.name }}" alt="">
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <a href="#car" class="carousel-control left" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a href="#car" class="carousel-control right" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                            <ul class="carousel-indicators">
+                                <li data-slide-to="0" class="active" data-target="#car"></li>
+                                <li data-slide-to="1" data-target="#car"></li>
+                                <li data-slide-to="2" data-target="#car"></li>
+                                <li data-slide-to="3" data-target="#car"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" id="contenttop">
+                        <a href="content/getText/{{ ContentTop.id }}">
+                            <strong>置顶</strong>
+                            <h3 class="title">{{ ContentTop.title }}</h3>
+                            <p class="overView">
+                                {{ ContentTop.content }}
+                            </p>
+                        </a>
+                    </div>
+                    <div class="panel panel-default contentList">
+                        <div class="panel-heading"><h3 class="panel-title">最新发布</h3></div>
+                        <div class="panel-body">
+                            <div class="content-list">
+                                {% for content in ContentList %}
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <h4>
+                                                <a class="title" href="content/getText/{{ content.id }}">{{ content.title }}</a>
+                                            </h4>
+                                            <p>
+                                                {% for lab in content.label %}
+                                                    <a href="#" class="label label-default">{{ lab }}</a>
+                                                {% endfor %}
+                                            </p>
+                                            <p class="overView">
+                                                {{ content.content }}
+                                            </p>
+                                            <p>
+                                        <span class="count">
+                                            <i class="glyphicon glyphicon-user"></i>
+                                            <a href="#">{{ content.user }}</a>
+                                        </span>
+                                                <span class="count">
+                                            <i class="glyphicon glyphicon-eye-open"></i>
+                                            <a href="#">阅读:{{ content.read }}</a>
+                                        </span>
+                                                <span class="count">
+                                            <i class="glyphicon glyphicon-comment"></i>
+                                            <a href="#">评论:{{ content.review }}</a>
+                                        </span>
+                                                <span class="count">
+                                            <i class="glyphicon glyphicon-time"></i>
+                                            <a href="#">{{ content.addTime }}</a>
+                                        </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <div class="panel panel-default" id="left-top">
+                        <a href="#">
+                            <strong>站点公告</strong>
+                            <p class="title">嫁人就嫁程序员</p>
+                            <p class="overView">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
+                                dolor exercitationem nemo nisi officia optio sint sit tempora. Aliquam architecto cum
+                                cupiditate fugiat illo iure molestias, odit omnis sed ullam.</p>
+                        </a>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">热门标签</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="labelList">
+                                <a class="label label-default" href="#">java</a>
+                                <a class="label label-default" href="#">python</a>
+                                <a class="label label-default" href="#">javascript</a>
+                                <a class="label label-default" href="#">django</a>
+                                <a class="label label-default" href="#">linux</a>
+                                <a class="label label-default" href="#">bootstrap</a>
+                                <a class="label label-default" href="#">nginx</a>
+                                <a class="label label-default" href="#">自动化运维</a>
+                                <a class="label label-default" href="#">mysql</a>
+                                <a class="label label-default" href="#">jquery</a>
+                                <a class="label label-default" href="#">vmware</a>
+                                <a class="label label-default" href="#">web</a>
+                                <a class="label label-default" href="#">html</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">最新发布</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-unstyled sidebar">
+                                {% for content in ContentList %}
+                                    <li><a href="/content/getText/{{ content.id }}">{{ content.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    {% include 'blog/link.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+{% block footer %}
+<script src="{% static 'js/blog/index.js' %}"></script>
+{% endblock %}
